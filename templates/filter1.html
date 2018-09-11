@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Home</title>
+    <!-- <link rel="stylesheet" type="text/css" href="./css/style.css"> -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+    
+
+    <form  enctype="multipart/form-data" action="{{ url_for('filter2',filename=filename)  }}" method="POST">
+        <table class="table">
+                <tr> <td> Filters </td>       
+                    <select name="effects">
+                            <option value="blur">remove blur effect 1</option>
+                            <option value="gauss">remove blur effect 2 </option>
+                            <option value="denoise">remove blur effect 3</option>
+                            <option value="edges">get edges</option>
+                            <option value="inpaint">remove scarps color</option>
+                            <option valie="inpaintgrey"> remove scarps greyscale</option>
+                    </select>
+            </tr>
+            <tr>	<td>Image</td><td> <img src="../static/images/efgh.png"   /> </td>	</tr>
+            <tr> <td colspan="2"> <input type="submit" class="btn-info" value="upload"> </td></tr>
+        </table>
+    </form>
+
+
+    
+    <script> 
+    console.log("console out");
+    
+     </script>
+</body>
+</html>
